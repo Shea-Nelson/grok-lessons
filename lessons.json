@@ -1,6 +1,15 @@
 {
   "lessons": [
     {
+      "date": "2026-11-16",
+      "title": "Teammates: let your bots hand off work",
+      "slug": "2026-11-16",
+      "fullText": true,
+      "dateLabel": "Mon, Nov 16, 2026",
+      "dateLong": "Monday, November 16, 2026",
+      "summary": "Monday, November 16, 2026 \u00b7 Good morning, Shea. This week: teammates and group chats \u2014 how your bots pass work to each other cleanly, without duplicate effort or surprise messages."
+    },
+    {
       "date": "2026-11-09",
       "title": "Pages: a home for work you come back to",
       "slug": "2026-11-09",
