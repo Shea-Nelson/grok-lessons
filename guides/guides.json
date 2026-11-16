@@ -843,6 +843,67 @@
       "group": "Other official help",
       "copySaved": false,
       "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
+    },
+    {
+      "title": "Team Bots",
+      "sourceUrl": "https://docs.x.ai/grok-bot/team-bots",
+      "localFile": null,
+      "retrievedDate": "2026-11-16",
+      "contentHash": "sha256:6097c043ccb86099b9ca57611d59409ef2cdb0b812ec7a9d5260589064ea6ced",
+      "group": "Grok Bot docs added Nov 16, 2026 (docs.x.ai)",
+      "copySaved": false,
+      "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
+    },
+    {
+      "title": "When Your Bot Takes Initiative",
+      "sourceUrl": "https://docs.x.ai/grok-bot/initiative",
+      "localFile": null,
+      "retrievedDate": "2026-11-16",
+      "contentHash": "sha256:2283897219714a25b26a9ae40bcb202d0c16bc963b193a347cde83403fe19f81",
+      "group": "Grok Bot docs added Nov 16, 2026 (docs.x.ai)",
+      "copySaved": false,
+      "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
+    },
+    {
+      "title": "Add a Bot to Your Meetings",
+      "sourceUrl": "https://docs.x.ai/grok-bot/meetings",
+      "localFile": null,
+      "retrievedDate": "2026-11-16",
+      "contentHash": "sha256:4221162fc83c068e0387bc158226b950605aaadfe60f417932e540ff33888033",
+      "group": "Grok Bot docs added Nov 16, 2026 (docs.x.ai)",
+      "copySaved": false,
+      "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
+    },
+    {
+      "title": "Deep links",
+      "sourceUrl": "https://docs.x.ai/grok-bot/deep-links",
+      "localFile": null,
+      "retrievedDate": "2026-11-16",
+      "contentHash": "sha256:5a2caee566d2e13b4f935c9cf632527cc41e842a47586e97ec66a01f3e83a423",
+      "group": "Grok Bot docs added Nov 16, 2026 (docs.x.ai)",
+      "copySaved": false,
+      "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
+    },
+    {
+      "title": "Use Grok Bot in Microsoft Teams",
+      "sourceUrl": "https://docs.x.ai/grok-bot/microsoft-teams",
+      "localFile": null,
+      "retrievedDate": "2026-11-16",
+      "contentHash": "sha256:db8411ae476a1319aa157ce4968c390e3a32b70fc830bbb97c99bc862bccfd14",
+      "group": "Grok Bot docs added Nov 16, 2026 (docs.x.ai)",
+      "copySaved": false,
+      "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
+    },
+    {
+      "title": "Set up Okta Verify and FastPass",
+      "sourceUrl": "https://docs.x.ai/grok-bot/okta-fastpass",
+      "localFile": null,
+      "retrievedDate": "2026-11-16",
+      "contentHash": "sha256:61640ac22b4c0d3db0a66b381cc5c7e5969327b1f67512ccd86a357f11ba6a43",
+      "group": "Grok Bot docs added Nov 16, 2026 (docs.x.ai)",
+      "copySaved": false,
+      "copyNote": "Official SpaceXSI (xAI) documentation is copyrighted, and no license allowing republication was found in the Terms of Service or on the docs site. This page links to the official source only; a local copy was not saved."
     }
-  ]
+  ],
+  "lastChecked": "2026-11-16"
 }
