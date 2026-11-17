@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161310" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
+<script>
+try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")document.querySelector('meta[name="color-scheme"]').content=t;}catch(e){}
+</script>
 <meta name="description" content="Skills: teach it once and it sticks">
 <title>Skills: teach it once and it sticks · Mon, Nov 2, 2026</title>
 <link rel="icon" href="../shelf/favicon.svg" type="image/svg+xml">
@@ -15,19 +18,25 @@
 <link rel="stylesheet" href="../shelf/base.css">
 <link rel="stylesheet" href="../shelf/doc.css">
 <link rel="stylesheet" href="../lessons.css">
-<script src="../shelf/theme-init.js"></script>
 </head>
 <body data-root="../">
-<a class="skip" href="#main">Skip to content</a>
-<nav class="local-nav wrap" aria-label="Lessons and guides"><a href="../">Lessons</a><a href="../guides/">Guides</a></nav>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site">
+  <a class="brand" href="https://shea-nelson.github.io/"><img src="../shelf/favicon.svg" alt="" width="28" height="28"><span>Pages</span></a>
+  <nav aria-label="Pages on this site"><ul role="list"><li><a href="https://shea-nelson.github.io/workout-app/">Workout</a></li><li><a href="https://shea-nelson.github.io/kitchen/recipes/">Recipes</a></li><li><a href="https://shea-nelson.github.io/kitchen/planner/">Planner</a></li><li><a href="https://shea-nelson.github.io/bible-study/bible/">Bible</a></li><li><a href="https://shea-nelson.github.io/grok-lessons/" aria-current="page">Lessons</a></li><li><a href="https://shea-nelson.github.io/family-time/">Family</a></li><li><a href="https://shea-nelson.github.io/game-library/">Games</a></li><li><a href="https://shea-nelson.github.io/">All pages</a></li><li><a href="https://shea-nelson.github.io/davenport-table/" target="_blank" rel="noopener noreferrer">Davenport<span class="sr"> (opens in a new tab)</span></a></li></ul></nav>
+  <button type="button" class="theme-btn"><span class="when-light">Dark</span><span class="when-dark">Light</span></button>
+</header>
+<nav class="local-nav wrap" aria-label="Lessons and guides"><ul role="list"><li><a href="../">Lessons</a></li><li><a href="../guides/">Guides</a></li></ul></nav>
 
-<article class="doc wrap" id="main">
+<main class="bare">
+<article class="doc wrap">
   <header class="hero-block">
     <p class="kicker">Monday, November 2, 2026</p>
-    <h1>Skills: teach it once and it sticks</h1>
+    <h1 id="content" tabindex="-1">Skills: teach it once and it sticks</h1>
     <p class="lede">This title is in the lesson archive. The source page listed it and did not include the full write-up, so the full text was not kept. Nothing has been invented here.</p>
   </header>
 </article>
+</main>
 
 <script type="module" src="../shelf/nav.js"></script>
 </body>

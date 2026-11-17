@@ -28,8 +28,11 @@ function chosenId() {
   return data.lessons[0].id;
 }
 
-function paint(id) {
+function paint(id, focusHeading) {
   const lesson = data.lessons.find((l) => l.id === id) || data.lessons[0];
+  document.title = lesson.title + " · Grok Bot weekly lesson";
+  const skip = document.querySelector("a.skip");
+  if (skip) skip.setAttribute("href", "#content");
   try { localStorage.setItem("lesson-open", lesson.id); } catch (e) {}
   const url = new URL(location.href);
   url.searchParams.set("id", lesson.id);
@@ -52,7 +55,7 @@ function paint(id) {
     b.className = "chip";
     b.textContent = l.date;
     b.setAttribute("aria-pressed", l.id === lesson.id ? "true" : "false");
-    b.addEventListener("click", () => paint(l.id));
+    b.addEventListener("click", () => paint(l.id, true));
     nav.append(b);
   });
   bar.append(nav);
@@ -91,12 +94,19 @@ function paint(id) {
     k.className = "kicker";
     k.textContent = lesson.dateLong || lesson.date;
     const h = document.createElement("h1");
+    h.id = "content";
+    h.tabIndex = -1;
     h.textContent = lesson.title;
     const p = document.createElement("p");
     p.className = "lede";
     p.textContent = "This title is in the lesson archive. The source page listed it and did not include the full write-up, so nothing is added here.";
     sec.append(k, h, p);
     host.append(sec);
+  }
+
+  if (focusHeading) {
+    const heading = app.querySelector("#content");
+    if (heading) heading.focus();
   }
 }
 

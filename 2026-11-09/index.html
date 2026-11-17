@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#f4efe6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#161310" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
+<script>
+try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")document.querySelector('meta[name="color-scheme"]').content=t;}catch(e){}
+</script>
 <meta name="description" content="Monday, November 9, 2026 · Good morning, Shea. This week: Pages — put meal plans, dashboards, and explainers somewhere you can reopen, instead of burying them in chat.">
 <title>Pages: a home for work you come back to · Mon, Nov 9, 2026</title>
 <link rel="icon" href="../shelf/favicon.svg" type="image/svg+xml">
@@ -15,16 +18,21 @@
 <link rel="stylesheet" href="../shelf/base.css">
 <link rel="stylesheet" href="../shelf/doc.css">
 <link rel="stylesheet" href="../lessons.css">
-<script src="../shelf/theme-init.js"></script>
 </head>
 <body data-root="../">
-<a class="skip" href="#main">Skip to content</a>
-<nav class="local-nav wrap" aria-label="Lessons and guides"><a href="../">Lessons</a><a href="../guides/">Guides</a></nav>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site">
+  <a class="brand" href="https://shea-nelson.github.io/"><img src="../shelf/favicon.svg" alt="" width="28" height="28"><span>Pages</span></a>
+  <nav aria-label="Pages on this site"><ul role="list"><li><a href="https://shea-nelson.github.io/workout-app/">Workout</a></li><li><a href="https://shea-nelson.github.io/kitchen/recipes/">Recipes</a></li><li><a href="https://shea-nelson.github.io/kitchen/planner/">Planner</a></li><li><a href="https://shea-nelson.github.io/bible-study/bible/">Bible</a></li><li><a href="https://shea-nelson.github.io/grok-lessons/" aria-current="page">Lessons</a></li><li><a href="https://shea-nelson.github.io/family-time/">Family</a></li><li><a href="https://shea-nelson.github.io/game-library/">Games</a></li><li><a href="https://shea-nelson.github.io/">All pages</a></li><li><a href="https://shea-nelson.github.io/davenport-table/" target="_blank" rel="noopener noreferrer">Davenport<span class="sr"> (opens in a new tab)</span></a></li></ul></nav>
+  <button type="button" class="theme-btn"><span class="when-light">Dark</span><span class="when-dark">Light</span></button>
+</header>
+<nav class="local-nav wrap" aria-label="Lessons and guides"><ul role="list"><li><a href="../">Lessons</a></li><li><a href="../guides/">Guides</a></li></ul></nav>
 
-<article class="doc wrap" id="main">
+<main class="bare">
+<article class="doc wrap">
   <header class="hero-block">
     <p class="kicker">Monday, November 9, 2026</p>
-    <h1>Pages: a home for work you come back to</h1>
+    <h1 id="content" tabindex="-1">Pages: a home for work you come back to</h1>
     <p class="lede">Good morning, Shea. This week: Pages — put meal plans, dashboards, and explainers somewhere you can reopen, instead of burying them in chat.</p>
   </header>
 
@@ -32,7 +40,7 @@
     <h2>This week’s lesson: Pages, a home for work you come back to</h2>
     <p class="prose">Skills decide how a Bot works. Routines decide when. Pages decide where the finished result lives. A page is a report, memo, dashboard, tracker, or explainer your Bot builds in chat: text, tables, charts, and filters you can reopen from the Library or a link.</p>
     <p class="prose">Official help is clear on a few points that matter at home. Ask for a page in chat and the Bot posts a card. Filters and switches on the page only change what you see; they do not save edits. To change the page itself, ask the Bot. A new page starts private; you share it with the share control (team, invitees, or anyone with the link). Public links open on pages.grok.bot with no sign-in, so keep private family details off those.</p>
-    <ol class="steps">
+    <ol class="steps" role="list">
       <li><div><strong>Say what the page is for</strong><p class="prose">Name the job and what should be on it. Example: a keto week dinner board with nights, sides for the kids, and a grocery checklist.</p></div></li>
       <li><div><strong>Open the card, keep chatting beside it</strong><p class="prose">On desktop the page fills the window and chat stays in a side panel. On iPhone, tap the card. Ask for tweaks while you look at it.</p></div></li>
       <li><div><strong>Tell the Bot what to change</strong><p class="prose">Controls on the page are view-only. Say things like “Move pizza to Monday and push chicken to Tuesday” so it edits the same page.</p></div></li>
@@ -82,7 +90,7 @@
       <div class="rowcard"><strong>Shopping cards and Vault cards</strong><p class="prose">BotPlainly walks through compare-and-buy cards, and why leaving a card out of Vault keeps every payment behind your OK.</p><small>Nov 6</small></div>
       <div class="rowcard"><strong>Teach a task, then schedule</strong><p class="prose">Show a browser flow once, review the draft skill, test on a safe example, then put it on a routine.</p><small>Nov 6</small></div>
     </div>
-    <div class="link-grid" style="margin-top:14px">
+    <div class="link-grid follow">
       <a class="link-card" href="https://x.com/mattyp/status/2119474599708827957"><strong>Efficiency &amp; behavior feedback</strong><small>x.com/mattyp · Nov 8</small></a>
       <a class="link-card" href="https://x.com/Texas_Twins_Dad/status/2119844619772968998"><strong>Messages connector</strong><small>x.com/Texas_Twins_Dad · Nov 9</small></a>
       <a class="link-card" href="https://x.com/Texas_Twins_Dad/status/2119796859057438885"><strong>Screen viewing</strong><small>x.com/Texas_Twins_Dad · Nov 9</small></a>
@@ -100,6 +108,7 @@
     </ul>
   </section>
 </article>
+</main>
 
 <script type="module" src="../shelf/nav.js"></script>
 </body>
