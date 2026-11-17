@@ -1,95 +1,83 @@
-/* Injects the shared site header. Pages set data-root to the relative path of this repo's root (for shelf/ assets). */
-const SITE = "https://shea-nelson.github.io/";
-/* Each app lives in its own repo now, so the links are absolute. */
-const LINKS = [
-  [SITE + "workout-app/", "Workout", "workout"],
-  [SITE + "kitchen/recipes/", "Recipes", "recipes"],
-  [SITE + "kitchen/planner/", "Planner", "planner"],
-  [SITE + "bible-study/bible/", "Bible", "bible"],
-  [SITE + "grok-lessons/", "Lessons", "lesson"],
-  [SITE + "family-time/", "Family", "family"],
-  [SITE + "game-library/", "Games", "games"],
-  [SITE, "All pages", "hub"],
-];
+/* Wires the color-scheme control. The header itself is in each page so it
+   paints with the HTML and still works if this script does not run. */
+const THEME_KEY = "shelf-theme";
+const THEME_COLOR = { light: "#f4efe6", dark: "#161310" };
 
-function currentKey() {
-  const path = location.pathname.replace(/\/index\.html$/, "/");
-  if (/^\/bible-study(\/|$)/.test(path)) return "bible";
-  if (/^\/grok-lessons(\/|$)/.test(path)) return "lesson";
-  if (/^\/family-time(\/|$)/.test(path)) return "family";
-  if (/^\/game-library(\/|$)/.test(path)) return "games";
-  if (/^\/kitchen\/recipes(\/|$)/.test(path)) return "recipes";
-  if (/^\/kitchen\/planner(\/|$)/.test(path)) return "planner";
-  if (/^\/workout-app(\/|$)/.test(path)) return "workout";
-  return "hub";
+function schemeMeta() {
+  return document.querySelector('meta[name="color-scheme"]');
+}
+
+function systemDark() {
+  return matchMedia("(prefers-color-scheme: dark)").matches;
+}
+
+function renderedDark() {
+  const content = schemeMeta()?.content;
+  if (content === "dark") return true;
+  if (content === "light") return false;
+  return systemDark();
+}
+
+function syncThemeColor(content) {
+  const tags = [...document.querySelectorAll('meta[name="theme-color"]')];
+  if (content === "light" || content === "dark") {
+    tags.forEach((el, i) => {
+      if (i === 0) {
+        el.content = THEME_COLOR[content];
+        el.removeAttribute("media");
+      } else {
+        el.setAttribute("media", "not all");
+      }
+    });
+    return;
+  }
+  if (tags[0]) {
+    tags[0].content = THEME_COLOR.light;
+    tags[0].setAttribute("media", "(prefers-color-scheme: light)");
+  }
+  if (tags[1]) {
+    tags[1].content = THEME_COLOR.dark;
+    tags[1].setAttribute("media", "(prefers-color-scheme: dark)");
+  }
 }
 
 function applyTheme(next) {
-  if (next) document.documentElement.setAttribute("data-theme", next);
-  else document.documentElement.removeAttribute("data-theme");
+  const content = next === "light" || next === "dark" ? next : "light dark";
+  const meta = schemeMeta();
+  if (meta) meta.content = content;
   try {
-    if (next) localStorage.setItem("shelf-theme", next);
-    else localStorage.removeItem("shelf-theme");
+    if (next === "light" || next === "dark") localStorage.setItem(THEME_KEY, next);
+    else localStorage.removeItem(THEME_KEY);
   } catch (e) {}
+  syncThemeColor(content);
   const btn = document.querySelector(".theme-btn");
   if (!btn) return;
-  const dark = document.documentElement.getAttribute("data-theme")
-    ? document.documentElement.getAttribute("data-theme") === "dark"
-    : matchMedia("(prefers-color-scheme: dark)").matches;
-  btn.setAttribute("aria-pressed", dark ? "true" : "false");
-  btn.textContent = dark ? "Light" : "Dark";
-  btn.setAttribute("aria-label", dark ? "Switch to light colors" : "Switch to dark colors");
+  btn.setAttribute("aria-pressed", renderedDark() ? "true" : "false");
 }
 
-function buildHeader() {
-  const root = document.body.dataset.root || "./";
-  const here = currentKey();
-  const header = document.createElement("header");
-  header.className = "site";
-  const brand = document.createElement("a");
-  brand.className = "brand";
-  brand.href = SITE;
-  const img = document.createElement("img");
-  img.src = root + "shelf/favicon.svg";
-  img.alt = "";
-  img.width = 28;
-  img.height = 28;
-  const name = document.createElement("span");
-  name.textContent = "Pages";
-  brand.append(img, name);
-  const nav = document.createElement("nav");
-  nav.setAttribute("aria-label", "Pages on this site");
-  for (const [href, label, key] of LINKS) {
-    const a = document.createElement("a");
-    a.href = href;
-    a.textContent = label;
-    if (key === here) a.setAttribute("aria-current", "page");
-    nav.append(a);
-  }
-  const ext = document.createElement("a");
-  ext.href = "https://shea-nelson.github.io/davenport-table/";
-  ext.target = "_blank";
-  ext.rel = "noopener noreferrer";
-  ext.textContent = "Davenport";
-  const sr = document.createElement("span");
-  sr.className = "sr";
-  sr.textContent = " (opens in a new tab)";
-  ext.append(sr);
-  nav.append(ext);
-  const theme = document.createElement("button");
-  theme.type = "button";
-  theme.className = "theme-btn";
-  theme.addEventListener("click", () => {
-    const explicit = document.documentElement.getAttribute("data-theme");
-    const dark = explicit ? explicit === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(dark ? "light" : "dark");
+function storedTheme() {
+  try {
+    const t = localStorage.getItem(THEME_KEY);
+    if (t === "light" || t === "dark") return t;
+  } catch (e) {}
+  return "";
+}
+
+const themeBtn = document.querySelector(".theme-btn");
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    const target = renderedDark() ? "light" : "dark";
+    const system = systemDark() ? "dark" : "light";
+    applyTheme(target === system ? "" : target);
   });
-  header.append(brand, nav, theme);
-  return header;
 }
+applyTheme(storedTheme());
 
-const skip = document.querySelector(".skip");
-const header = buildHeader();
-if (skip) skip.after(header);
-else document.body.prepend(header);
-applyTheme(document.documentElement.getAttribute("data-theme"));
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+  if (schemeMeta()?.content === "light dark") applyTheme("");
+});
+
+window.addEventListener("storage", (e) => {
+  if (e.key !== THEME_KEY) return;
+  applyTheme(e.newValue === "light" || e.newValue === "dark" ? e.newValue : "");
+});

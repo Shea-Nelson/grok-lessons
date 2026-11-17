@@ -23,6 +23,12 @@ function h(tag, attrs, ...kids) {
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const DOW = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+function newTab(href, ...kids) {
+  const a = h("a", { href, target: "_blank", rel: "noopener noreferrer" }, ...kids);
+  a.append(h("span", { class: "sr" }, " (opens in a new tab)"));
+  return a;
+}
+
 function fillCell(td, cell, label) {
   td.dataset.label = label;
   if (cell && typeof cell === "object") {
@@ -32,15 +38,19 @@ function fillCell(td, cell, label) {
   }
   const s = cell == null ? "" : String(cell);
   if (/^https?:\/\//.test(s)) {
-    td.append(h("a", { href: s, target: "_blank", rel: "noopener noreferrer" }, s));
+    td.append(newTab(s, s));
     return;
   }
   td.textContent = s;
 }
 
-function renderTable(node) {
+let tableSeq = 0;
+
+function renderTable(node, heading) {
   const cols = node.p.columns || [];
+  const capId = "table-caption-" + (++tableSeq);
   const table = h("table", { class: "data" });
+  table.append(h("caption", { id: capId, class: "sr" }, heading || "Table"));
   const thead = h("thead");
   const hr = h("tr");
   cols.forEach((c) => hr.append(h("th", { scope: "col" }, c)));
@@ -56,7 +66,12 @@ function renderTable(node) {
     tb.append(tr);
   });
   table.append(thead, tb);
-  return h("div", { class: "table-wrap" }, table);
+  return h("div", {
+    class: "table-wrap",
+    tabindex: "0",
+    role: "region",
+    "aria-labelledby": capId,
+  }, table);
 }
 
 function renderMonth(node) {
@@ -86,34 +101,38 @@ function renderMonth(node) {
   return h("div", { class: "month" }, h("h3", null, MONTHS[m - 1] + " " + y), grid);
 }
 
-function render(node, level) {
+let stepSeq = 0;
+
+function render(node, level, heading) {
   if (node == null || node === false) return document.createTextNode("");
   if (typeof node === "string" || typeof node === "number") return document.createTextNode(String(node));
   const t = node.t;
   const p = node.p || {};
-  const kids = () => (node.c || []).map((c) => render(c, level));
+  const kids = () => (node.c || []).map((c) => render(c, level, heading));
   if (t === "frag") return h("div", null, ...kids());
-  if (t === "Text") return h("p", { class: "prose" }, ...(node.c || []).map((c) => render(c, level)));
+  if (t === "Text") return h("p", { class: "prose" }, ...(node.c || []).map((c) => render(c, level, heading)));
   if (t === "Section") {
     const tag = level > 2 ? "h3" : "h2";
     const id = slug(p.heading || "section");
-    return h("section", { class: "block", id }, h(tag, null, p.heading || ""), ...(node.c || []).map((c) => render(c, level + 1)));
+    const next = p.heading || heading || "";
+    return h("section", { class: "block", id }, h(tag, null, p.heading || ""), ...(node.c || []).map((c) => render(c, level + 1, next)));
   }
   if (t === "Callout") {
     return h("aside", { class: "callout" + (p.tone === "warning" ? " warning" : "") },
       p.lead ? h("span", { class: "leadline" }, p.lead) : "",
-      ...(node.c || []).map((c) => typeof c === "string" ? h("p", { class: "prose" }, c) : render(c, level)));
+      ...(node.c || []).map((c) => typeof c === "string" ? h("p", { class: "prose" }, c) : render(c, level, heading)));
   }
   if (t === "Quote") {
-    return h("blockquote", { class: "quote" }, ...(node.c || []).map((c) => render(c, level)), p.cite ? h("cite", null, p.cite) : "");
+    return h("blockquote", { class: "quote" }, ...(node.c || []).map((c) => render(c, level, heading)), p.cite ? h("cite", null, p.cite) : "");
   }
   if (t === "Steps") {
-    const ol = h("ol", { class: "steps" });
+    const ol = h("ol", { class: "steps", role: "list" });
     (p.steps || []).forEach((s, i) => {
       const li = h("li");
       const body = h("div", null, h("strong", null, s.title || ""), s.detail ? h("p", { class: "prose" }, s.detail) : "");
-      const label = h("label", { class: "check noprint" });
-      const input = h("input", { type: "checkbox", "data-step": String(i) });
+      const inputId = "done-step-" + (++stepSeq);
+      const label = h("label", { class: "check noprint", for: inputId });
+      const input = h("input", { type: "checkbox", id: inputId, "data-step": String(i) });
       label.append(input, document.createTextNode(" Done on this device"));
       body.append(label);
       li.append(body);
@@ -136,13 +155,14 @@ function render(node, level) {
     });
     return box;
   }
-  if (t === "Table") return renderTable(node);
+  if (t === "Table") return renderTable(node, heading);
   if (t === "LinkCards") {
     const grid = h("div", { class: "link-grid" });
     (p.links || []).forEach((link) => {
-      const a = h("a", { class: "link-card", href: link.href, target: "_blank", rel: "noopener noreferrer" },
+      const a = newTab(link.href,
         h("strong", null, link.title || link.href),
         h("small", null, [link.site, link.date].filter(Boolean).join(" · ")));
+      a.className = "link-card";
       grid.append(a);
     });
     return grid;
@@ -154,7 +174,7 @@ function render(node, level) {
       const s = String(item);
       const m = s.match(/^(.*?)(https?:\/\/\S+)$/);
       if (m) {
-        li.append(m[1], h("a", { href: m[2], target: "_blank", rel: "noopener noreferrer" }, m[2]));
+        li.append(m[1], newTab(m[2], m[2]));
       } else li.textContent = s;
       ul.append(li);
     });
@@ -185,11 +205,11 @@ function render(node, level) {
     return group;
   }
   if (t === "Grid") {
-    return h("div", { class: "grid-block", "data-cols": String(p.columns || 1) }, ...(node.c || []).map((c) => render(c, level)));
+    return h("div", { class: "grid-block", "data-cols": String(p.columns || 1) }, ...(node.c || []).map((c) => render(c, level, heading)));
   }
   if (t === "MonthView") return renderMonth(node);
   const box = h("div");
-  (node.c || []).forEach((c) => box.append(render(c, level)));
+  (node.c || []).forEach((c) => box.append(render(c, level, heading)));
   return box;
 }
 
@@ -197,14 +217,14 @@ export function renderPage(node, mount) {
   mount.replaceChildren();
   const p = node.p || {};
   const hero = h("header", { class: "hero-block wrap" },
-    h("h1", null, p.title || ""),
+    h("h1", { id: "content", tabindex: "-1" }, p.title || ""),
     p.summary ? h("p", { class: "lede" }, p.summary) : "");
   const body = h("div", { class: "doc wrap" });
-  (node.c || []).forEach((c) => body.append(render(c, 2)));
+  (node.c || []).forEach((c) => body.append(render(c, 2, "")));
   mount.append(hero, body);
   if (p.sources && p.sources.length) {
     const list = h("ul", { class: "bullets" });
-    p.sources.forEach((src) => list.append(h("li", null, h("a", { href: src, target: "_blank", rel: "noopener noreferrer" }, src))));
+    p.sources.forEach((src) => list.append(h("li", null, newTab(src, src))));
     body.append(h("section", { class: "sources block" }, h("h2", null, "Sources"), list));
   }
 }
