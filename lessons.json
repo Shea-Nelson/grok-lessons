@@ -7,7 +7,7 @@
       "fullText": true,
       "dateLabel": "Mon, Nov 16, 2026",
       "dateLong": "Monday, November 16, 2026",
-      "summary": "Monday, November 16, 2026 \u00b7 Good morning, Shea. This week: teammates and group chats \u2014 how your bots pass work to each other cleanly, without duplicate effort or surprise messages."
+      "summary": "Monday, November 16, 2026 · Good morning, Shea. This week: teammates and group chats — how your bots pass work to each other cleanly, without duplicate effort or surprise messages."
     },
     {
       "date": "2026-11-09",
@@ -16,31 +16,34 @@
       "fullText": true,
       "dateLabel": "Mon, Nov 9, 2026",
       "dateLong": "Monday, November 9, 2026",
-      "summary": "Monday, November 9, 2026 \u00b7 Good morning, Shea. This week: Pages \u2014 put meal plans, dashboards, and explainers somewhere you can reopen, instead of burying them in chat."
+      "summary": "Monday, November 9, 2026 · Good morning, Shea. This week: Pages — put meal plans, dashboards, and explainers somewhere you can reopen, instead of burying them in chat."
     },
     {
       "date": "2026-11-03",
       "title": "Memory: what your bot keeps (and how to tidy it)",
       "slug": "2026-11-03",
-      "fullText": false,
+      "fullText": true,
       "dateLabel": "Tue, Nov 3, 2026",
-      "dateLong": "Tuesday, November 3, 2026"
+      "dateLong": "Tuesday, November 3, 2026",
+      "summary": "Tuesday, November 3, 2026 · Good morning, Shea. This week: memory — what your Bot keeps on its own, how to check it, and how to tidy rules so Zhaan, Scorpy, and the rest don't drift."
     },
     {
       "date": "2026-11-02",
       "title": "Skills: teach it once and it sticks",
       "slug": "2026-11-02",
-      "fullText": false,
+      "fullText": true,
       "dateLabel": "Mon, Nov 2, 2026",
-      "dateLong": "Monday, November 2, 2026"
+      "dateLong": "Monday, November 2, 2026",
+      "summary": "Monday, November 2, 2026 · Good morning, Shea. This week: skills — write down how a job should be done, so you don't re-explain the keto plan, the grocery list, or the Giles draft rules every time."
     },
     {
       "date": "2026-11-01",
       "title": "Routines: your bot on a clock (or on alert)",
       "slug": "2026-11-01",
-      "fullText": false,
+      "fullText": true,
       "dateLabel": "Sun, Nov 1, 2026",
-      "dateLong": "Sunday, November 1, 2026"
+      "dateLong": "Sunday, November 1, 2026",
+      "summary": "Sunday, November 1, 2026 · Good morning, Shea. This week: routines — put a job on a schedule, or start it when something happens, and keep anything that messages Nicole or posts to Discord behind your OK."
     }
   ]
 }

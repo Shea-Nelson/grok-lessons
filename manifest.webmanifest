@@ -1,6 +1,6 @@
 {
-  "name": "Grok Bot weekly lessons",
-  "short_name": "Lessons",
+  "name": "Grok Bot Lesson",
+  "short_name": "Grok Bot Lesson",
   "id": "/grok-lessons/",
   "start_url": "/grok-lessons/",
   "scope": "/grok-lessons/",
