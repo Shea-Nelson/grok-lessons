@@ -9,8 +9,8 @@
 <script>
 try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")document.querySelector('meta[name="color-scheme"]').content=t;}catch(e){}
 </script>
-<meta name="description" content="Memory: what your bot keeps (and how to tidy it)">
-<title>Memory: what your bot keeps (and how to tidy it) · Tue, Nov 3, 2026</title>
+<meta name="description" content="Tuesday, November 3, 2026 · Good morning, Shea. This week: memory — what your Bot keeps on its own, how to check it, and how to tidy rules so Zhaan, Scorpy, and the rest don't drift.">
+<title>Memory: what your bot keeps (and how to tidy it) · Grok Bot Lesson</title>
 <link rel="icon" href="../shelf/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@ try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")documen
 <link rel="stylesheet" href="../lessons.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/grok-lessons/icons/apple-touch-icon.png">
 <link rel="manifest" href="/grok-lessons/manifest.webmanifest">
-<meta name="apple-mobile-web-app-title" content="Lessons">
+<meta name="apple-mobile-web-app-title" content="Grok Bot Lesson">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 </head>
@@ -31,15 +31,91 @@ try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")documen
   <nav aria-label="Pages on this site"><ul role="list"><li><a href="https://shea-nelson.github.io/workout-app/">Workout</a></li><li><a href="https://shea-nelson.github.io/kitchen/recipes/">Recipes</a></li><li><a href="https://shea-nelson.github.io/kitchen/planner/">Planner</a></li><li><a href="https://shea-nelson.github.io/bible-study/bible/">Bible</a></li><li><a href="https://shea-nelson.github.io/grok-lessons/" aria-current="page">Lessons</a></li><li><a href="https://shea-nelson.github.io/family-time/">Family</a></li><li><a href="https://shea-nelson.github.io/game-library/">Games</a></li><li><a href="https://shea-nelson.github.io/">All pages</a></li><li><a href="https://shea-nelson.github.io/davenport-table/" target="_blank" rel="noopener noreferrer">Davenport<span class="sr"> (opens in a new tab)</span></a></li></ul></nav>
   <button type="button" class="theme-btn"><span class="when-light">Dark</span><span class="when-dark">Light</span></button>
 </header>
-<nav class="local-nav wrap" aria-label="Lessons and guides"><ul role="list"><li><a href="../">Lessons</a></li><li><a href="../guides/">Guides</a></li></ul></nav>
+<nav class="local-nav wrap" aria-label="Grok Bot Lesson and guides"><ul role="list"><li><a href="../">Grok Bot Lesson</a></li><li><a href="../guides/">Guides</a></li></ul></nav>
 
 <main class="bare">
 <article class="doc wrap">
   <header class="hero-block">
     <p class="kicker">Tuesday, November 3, 2026</p>
     <h1 id="content" tabindex="-1">Memory: what your bot keeps (and how to tidy it)</h1>
-    <p class="lede">This title is in the lesson archive. The source page listed it and did not include the full write-up, so the full text was not kept. Nothing has been invented here.</p>
+    <p class="lede">Good morning, Shea. This week: memory — what your Bot keeps on its own, how to check it, and how to tidy rules so Zhaan, Scorpy, and the rest don’t drift.</p>
   </header>
+
+  <section class="block" id="this-weeks-lesson">
+    <h2>This week’s lesson: tidy memory in chat, not on a screen</h2>
+    <p class="prose">A Bot keeps stable preferences, important facts, and summaries from its work, so it can keep a role without replaying every prior message. Official help says it saves things like how you like to work, rules you ask it to keep (“Always ask before you send an email”), facts about you such as your name and time zone, and a dated log of what it has worked on with you.</p>
+    <p class="prose">Logins, cards, and contact info, like addresses and phone numbers, belong in Vault, not in memory.</p>
+    <p class="prose">A Bot decides on its own when something is worth keeping. It doesn’t ask first. It often mentions a save in its reply, but not every save shows up in the chat. To make sure it keeps something, ask it to remember, for example: “Remember that I’m out every Friday.”</p>
+    <p class="prose">What a Bot saves in one chat, it remembers in all your chats with it. Each Bot has its own memory, but a few facts about you, such as your name and time zone, are shared by all your Bots. When one Bot learns one of these, your other Bots know it too. In a group chat, your Bot can use what you told it in your private chat. If something should stay out of a group, tell your Bot. Each Bot in a group keeps its own memory; that memory isn’t shared with the other Bots there, but everyone in the group can read what your Bot says.</p>
+    <p class="prose">There is no memory screen for a personal Bot. Ask in chat instead. To see it: “What do you remember about me?” To correct it: “That’s out of date.” To remove it: “Forget that…” Reset a conversation, and memory is kept. Delete a Bot, and that Bot’s memory is deleted, including shared facts it saved for your other Bots. If you may need the work later, hide it from the sidebar instead of deleting it.</p>
+    <p class="prose">Memory is not a source of truth. For facts that change, ask the Bot to look them up again. Back safety boundaries with approvals, not memory alone.</p>
+    <ol class="steps" role="list">
+      <li><div><strong>Ask what it remembers</strong><p class="prose">Start with “What do you remember about me?” Read the list. Watch for old rules, mixed-up owners, or anything that shouldn’t be there.</p></div></li>
+      <li><div><strong>Correct or forget, in plain words</strong><p class="prose">Out of date? Tell it the new detail. Shouldn’t be there? Say “Forget that…”</p></div></li>
+      <li><div><strong>Remember the rules that should last</strong><p class="prose">Lasting rules belong in memory. One-off tasks belong in the message. A good lasting rule: “From now on, never send external messages without approval.”</p></div></li>
+      <li><div><strong>Keep secrets out of memory</strong><p class="prose">Logins, cards, and contact details go in Vault. Health numbers don’t belong in memory or on a Page.</p></div></li>
+      <li><div><strong>Check each Bot that has a job</strong><p class="prose">Zhaan, Scorpy, and Rygel each have their own memory. A rule you told Scorpy is not automatically in Zhaan’s.</p></div></li>
+    </ol>
+    <div class="callout">
+      <span class="leadline">Copy and try</span>
+      <pre class="prompt">What do you remember about me, and about how we work together? List the lasting rules, family and household facts, and anything about Nicole, Giles, Discord, or calendars. Then wait. I'll tell you what to correct or forget. Don't change anything until I say so.</pre>
+    </div>
+  </section>
+
+  <section class="block" id="tip">
+    <h2>Tip of the week</h2>
+    <p class="prose">If a fact all your Bots share is wrong, tell any Bot the right version. To remove a shared fact completely, ask the Bot that saved it. Don’t delete a Bot just to clear a long chat; reset the conversation if you only want a fresh thread, because reset keeps memory.</p>
+  </section>
+
+  <section class="block" id="spotlight">
+    <h2>Use case spotlight: check imported memory, then tidy it</h2>
+    <p class="prose">On October 29, BotPlainly (@BotPlainly) posted a short checklist for anyone who had moved ChatGPT memory into Grok Bot: ask “What do you remember about me?” If something is out of date, tell it the new detail. If it shouldn’t be there, say “Forget that.” Passwords and card numbers go in Vault, not memory. That matches the official “What a Bot remembers” page.</p>
+    <p class="prose">Settings also has Import Memory, which brings preferences and context over from another assistant into your primary Bot. After any import, run that same check. For your crew, it’s worth asking Scorpy and Zhaan the same question, especially around calendar ownership and the rule that nothing goes to Nicole or Giles without your OK.</p>
+    <div class="link-grid">
+      <a class="link-card" href="https://x.com/BotPlainly/status/2115891462013382974">
+        <strong>Check memory, then forget what shouldn’t be there</strong>
+        <small>x.com/BotPlainly · Oct 29, 2026</small>
+      </a>
+    </div>
+  </section>
+
+  <section class="block" id="try">
+    <h2>Try this week</h2>
+    <p class="prose">Write the lasting rules down, and make sure each Bot that needs them has the same version:</p>
+    <div class="callout">
+      <span class="leadline">Remember the owners, forget the conflicts</span>
+      <pre class="prompt">Remember these lasting rules, and forget any older ones that conflict: Zhaan owns calendars, reminders, and school dates. You own the keto meal plan and grocery list. Never put health numbers or logins in memory or on a Page. Never email Giles, text Nicole, or post to Discord without my OK. After you save that, show me what you now remember about those rules.</pre>
+    </div>
+    <p class="prose">Send a matching note to Zhaan so both Bots agree.</p>
+  </section>
+
+  <section class="block" id="from-x">
+    <h2>From around X</h2>
+    <div class="stack">
+      <div class="rowcard"><strong>A 30-second memory check</strong><p class="prose">@BotPlainly’s checklist after an import: ask what it remembers, correct what’s out of date, say “Forget that” for what shouldn’t be there, and keep passwords and cards in Vault.</p><small>Oct 29</small></div>
+      <div class="rowcard"><strong>Deleting a Bot also drops shared facts</strong><p class="prose">@CarolinaDill learned from the help page that deleting a Grok Bot erases the shared facts it saved about you, that each Bot can save things without asking first, and that a few facts such as your name and time zone are shared by all of them.</p><small>Oct 27</small></div>
+      <div class="rowcard"><strong>Tell the rules once, then audit them</strong><p class="prose">@SamAiPr’s steps are the official ones in order: say “Remember…,” ask “What do you remember about me?,” then fix anything wrong so later chats start with those rules.</p><small>Oct 29</small></div>
+      <div class="rowcard"><strong>Import is two copy-pastes</strong><p class="prose">@Ariex_00 notes that switching assistants doesn’t have to mean re-explaining yourself, and that Grok Bot can pull that memory in with two copy-pastes. Official help puts that import under Settings.</p><small>Oct 31</small></div>
+      <div class="rowcard"><strong>A group-chat correction may not follow you</strong><p class="prose">@SrGarcess reported to the Grok Bot team that a Bot can forget, in a 1:1 chat, corrections made to it in a group chat. That’s a user report, not an official guarantee, so restate important corrections in the Bot’s own chat.</p><small>Oct 23</small></div>
+    </div>
+    <div class="link-grid follow">
+      <a class="link-card" href="https://x.com/BotPlainly/status/2115891462013382974"><strong>Memory check after import</strong><small>x.com/BotPlainly · Oct 29</small></a>
+      <a class="link-card" href="https://x.com/CarolinaDill/status/2115045658704945586"><strong>Delete also clears shared facts</strong><small>x.com/CarolinaDill · Oct 27</small></a>
+      <a class="link-card" href="https://x.com/SamAiPr/status/2115736556455485769"><strong>Remember, then audit</strong><small>x.com/SamAiPr · Oct 29</small></a>
+      <a class="link-card" href="https://x.com/Ariex_00/status/2116534599689892132"><strong>Import Memory in two pastes</strong><small>x.com/Ariex_00 · Oct 31</small></a>
+      <a class="link-card" href="https://x.com/SrGarcess/status/2113451802977075239"><strong>Group-chat correction report</strong><small>x.com/SrGarcess · Oct 23</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="go-deeper">
+    <h2>Guides</h2>
+    <p class="prose">Official memory details are in the <a href="../guides/">Guides</a> list, under Create and manage Bots and How Grok Bot works.</p>
+    <ul class="bullets">
+      <li>What a Bot remembers: <a href="https://docs.x.ai/grok-bot/bots">https://docs.x.ai/grok-bot/bots</a></li>
+      <li>How Grok Bot works (memory first): <a href="https://docs.x.ai/grok-bot/how-grok-bot-works">https://docs.x.ai/grok-bot/how-grok-bot-works</a></li>
+      <li>FAQ, including memory: <a href="https://docs.x.ai/grok-bot/faq">https://docs.x.ai/grok-bot/faq</a></li>
+    </ul>
+  </section>
 </article>
 </main>
 

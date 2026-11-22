@@ -30,7 +30,7 @@ function chosenId() {
 
 function paint(id, focusHeading) {
   const lesson = data.lessons.find((l) => l.id === id) || data.lessons[0];
-  document.title = lesson.title + " · Grok Bot weekly lesson";
+  document.title = lesson.title + " · Grok Bot Lesson";
   const skip = document.querySelector("a.skip");
   if (skip) skip.setAttribute("href", "#content");
   try { localStorage.setItem("lesson-open", lesson.id); } catch (e) {}

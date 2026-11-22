@@ -9,8 +9,8 @@
 <script>
 try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")document.querySelector('meta[name="color-scheme"]').content=t;}catch(e){}
 </script>
-<meta name="description" content="Archive of weekly Grok Bot lessons, newest first.">
-<title>Grok Bot weekly lessons</title>
+<meta name="description" content="Grok Bot Lesson archive, newest first.">
+<title>Grok Bot Lesson</title>
 <link rel="icon" href="shelf/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@ try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")documen
 <link rel="stylesheet" href="lessons.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/grok-lessons/icons/apple-touch-icon.png">
 <link rel="manifest" href="/grok-lessons/manifest.webmanifest">
-<meta name="apple-mobile-web-app-title" content="Lessons">
+<meta name="apple-mobile-web-app-title" content="Grok Bot Lesson">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 </head>
@@ -31,31 +31,37 @@ try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")documen
   <nav aria-label="Pages on this site"><ul role="list"><li><a href="https://shea-nelson.github.io/workout-app/">Workout</a></li><li><a href="https://shea-nelson.github.io/kitchen/recipes/">Recipes</a></li><li><a href="https://shea-nelson.github.io/kitchen/planner/">Planner</a></li><li><a href="https://shea-nelson.github.io/bible-study/bible/">Bible</a></li><li><a href="https://shea-nelson.github.io/grok-lessons/" aria-current="page">Lessons</a></li><li><a href="https://shea-nelson.github.io/family-time/">Family</a></li><li><a href="https://shea-nelson.github.io/game-library/">Games</a></li><li><a href="https://shea-nelson.github.io/">All pages</a></li><li><a href="https://shea-nelson.github.io/davenport-table/" target="_blank" rel="noopener noreferrer">Davenport<span class="sr"> (opens in a new tab)</span></a></li></ul></nav>
   <button type="button" class="theme-btn"><span class="when-light">Dark</span><span class="when-dark">Light</span></button>
 </header>
-<nav class="local-nav wrap" aria-label="Lessons and guides"><ul role="list"><li><a href="./" aria-current="page">Lessons</a></li><li><a href="guides/">Guides</a></li></ul></nav>
+<nav class="local-nav wrap" aria-label="Grok Bot Lesson and guides"><ul role="list"><li><a href="./" aria-current="page">Grok Bot Lesson</a></li><li><a href="guides/">Guides</a></li></ul></nav>
 
 <main>
   <header class="wrap hero-block">
-    <p class="kicker">Weekly Grok Bot lessons</p>
+    <p class="kicker">Grok Bot Lesson</p>
     <h1 id="content" tabindex="-1">A home you can look back on</h1>
     <p class="lede">Each Monday’s lesson lives on its own page. Older lessons stay in the archive so you can reread them. Official xAI guides are collected under Guides.</p>
   </header>
   <section class="wrap block">
     <h2 class="kicker">This week’s lesson</h2>
+    <div id="latest-lesson">
     <a class="link-card latest" href="2026-11-16/">
       <small>Monday, November 16, 2026</small>
       <strong>Teammates: let your bots hand off work</strong>
       <span>Monday, November 16, 2026 · Good morning, Shea. This week: teammates and group chats — how your bots pass work to each other cleanly, without duplicate effort or surprise messages.</span>
     </a>
+    </div>
   </section>
   <section class="wrap block">
     <h2>Lesson archive</h2>
-    <ol class="archive-list" role="list">
-      <li><a href="2026-11-16/"><time datetime="2026-11-16">Mon, Nov 16, 2026</time> — Teammates: let your bots hand off work</a></li><li><a href="2026-11-09/"><time datetime="2026-11-09">Mon, Nov 9, 2026</time> — Pages: a home for work you come back to</a></li><li><a href="2026-11-03/"><time datetime="2026-11-03">Tue, Nov 3, 2026</time> — Memory: what your bot keeps (and how to tidy it)</a> <span class="meta">Title only — full text was not kept</span></li><li><a href="2026-11-02/"><time datetime="2026-11-02">Mon, Nov 2, 2026</time> — Skills: teach it once and it sticks</a> <span class="meta">Title only — full text was not kept</span></li><li><a href="2026-11-01/"><time datetime="2026-11-01">Sun, Nov 1, 2026</time> — Routines: your bot on a clock (or on alert)</a> <span class="meta">Title only — full text was not kept</span></li>
+    <ol class="archive-list" id="lesson-archive" role="list">
+      <li><a href="2026-11-16/"><time datetime="2026-11-16">Mon, Nov 16, 2026</time> — Teammates: let your bots hand off work</a></li>
+      <li><a href="2026-11-09/"><time datetime="2026-11-09">Mon, Nov 9, 2026</time> — Pages: a home for work you come back to</a></li>
+      <li><a href="2026-11-03/"><time datetime="2026-11-03">Tue, Nov 3, 2026</time> — Memory: what your bot keeps (and how to tidy it)</a></li>
+      <li><a href="2026-11-02/"><time datetime="2026-11-02">Mon, Nov 2, 2026</time> — Skills: teach it once and it sticks</a></li>
+      <li><a href="2026-11-01/"><time datetime="2026-11-01">Sun, Nov 1, 2026</time> — Routines: your bot on a clock (or on alert)</a></li>
     </ol>
-    <p class="prose">The November 1, 2, and 3 lessons are listed by title only. When the weekly page was updated, only those titles were kept, not the full write-ups.</p>
   </section>
 </main>
 
 <script type="module" src="shelf/nav.js"></script>
+<script type="module" src="index.js"></script>
 </body>
 </html>

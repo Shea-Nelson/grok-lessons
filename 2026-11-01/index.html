@@ -9,8 +9,8 @@
 <script>
 try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")document.querySelector('meta[name="color-scheme"]').content=t;}catch(e){}
 </script>
-<meta name="description" content="Routines: your bot on a clock (or on alert)">
-<title>Routines: your bot on a clock (or on alert) · Sun, Nov 1, 2026</title>
+<meta name="description" content="Sunday, November 1, 2026 · Good morning, Shea. This week: routines — put a job on a schedule, or start it when something happens, and keep anything that messages Nicole or posts to Discord behind your OK.">
+<title>Routines: your bot on a clock (or on alert) · Grok Bot Lesson</title>
 <link rel="icon" href="../shelf/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +20,7 @@ try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")documen
 <link rel="stylesheet" href="../lessons.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/grok-lessons/icons/apple-touch-icon.png">
 <link rel="manifest" href="/grok-lessons/manifest.webmanifest">
-<meta name="apple-mobile-web-app-title" content="Lessons">
+<meta name="apple-mobile-web-app-title" content="Grok Bot Lesson">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 </head>
@@ -31,15 +31,87 @@ try{var t=localStorage.getItem("shelf-theme");if(t==="light"||t==="dark")documen
   <nav aria-label="Pages on this site"><ul role="list"><li><a href="https://shea-nelson.github.io/workout-app/">Workout</a></li><li><a href="https://shea-nelson.github.io/kitchen/recipes/">Recipes</a></li><li><a href="https://shea-nelson.github.io/kitchen/planner/">Planner</a></li><li><a href="https://shea-nelson.github.io/bible-study/bible/">Bible</a></li><li><a href="https://shea-nelson.github.io/grok-lessons/" aria-current="page">Lessons</a></li><li><a href="https://shea-nelson.github.io/family-time/">Family</a></li><li><a href="https://shea-nelson.github.io/game-library/">Games</a></li><li><a href="https://shea-nelson.github.io/">All pages</a></li><li><a href="https://shea-nelson.github.io/davenport-table/" target="_blank" rel="noopener noreferrer">Davenport<span class="sr"> (opens in a new tab)</span></a></li></ul></nav>
   <button type="button" class="theme-btn"><span class="when-light">Dark</span><span class="when-dark">Light</span></button>
 </header>
-<nav class="local-nav wrap" aria-label="Lessons and guides"><ul role="list"><li><a href="../">Lessons</a></li><li><a href="../guides/">Guides</a></li></ul></nav>
+<nav class="local-nav wrap" aria-label="Grok Bot Lesson and guides"><ul role="list"><li><a href="../">Grok Bot Lesson</a></li><li><a href="../guides/">Guides</a></li></ul></nav>
 
 <main class="bare">
 <article class="doc wrap">
   <header class="hero-block">
     <p class="kicker">Sunday, November 1, 2026</p>
     <h1 id="content" tabindex="-1">Routines: your bot on a clock (or on alert)</h1>
-    <p class="lede">This title is in the lesson archive. The source page listed it and did not include the full write-up, so the full text was not kept. Nothing has been invented here.</p>
+    <p class="lede">Good morning, Shea. This week: routines — put a job on a schedule, or start it when something happens, and keep anything that messages Nicole or posts to Discord behind your OK.</p>
   </header>
+
+  <section class="block" id="this-weeks-lesson">
+    <h2>This week’s lesson: a routine says when, not how</h2>
+    <p class="prose">A skill is how to do a job. A routine tells one Bot when to run it: on a schedule, or when something happens, such as a new email or a webhook call. Official help is clear on the order: start with a one-time task, make it reliable, save the method as a skill, and only then automate it.</p>
+    <p class="prose">Routines run in the cloud while your laptop is closed. Schedules use the time zone in Settings, under Bot, labeled Timezone. Ask in plain words, like “every weekday at 8:00 AM,” then open the routine and check When to run, which shows the saved schedule in words.</p>
+    <p class="prose">A new routine waits for its next scheduled time. It doesn’t run when you create it. If you set “every day at 8:00 AM” at 8:05, the first run is tomorrow at 8:00 AM. To try it right away, use Test, when the routine offers it.</p>
+    <ol class="steps" role="list">
+      <li><div><strong>Pick one job and one owner</strong><p class="prose">A Sunday keto dinner plan, a Monday look at your iPhone calendar, or a weekly grocery list. Give that job to one Bot, the same way Zhaan owns calendar dates.</p></div></li>
+      <li><div><strong>Write the when, the result, and the stop line</strong><p class="prose">Say the schedule or the event, what should come back (a Page link, a short note in this chat), and what must wait for you: an email to Giles, a Discord post, or anything that spends money.</p></div></li>
+      <li><div><strong>Check When to run</strong><p class="prose">Open the routine and read the schedule in words. If it doesn’t match what you meant, choose Edit and tell the Bot what to fix.</p></div></li>
+      <li><div><strong>Test with a safe example</strong><p class="prose">A test run does real work. It can open websites and call connected tools. Use a safe input, and keep sends behind your OK.</p></div></li>
+      <li><div><strong>Watch how often it runs</strong><p class="prose">Each run spends usage. An hourly schedule, a short interval, or a busy-channel trigger can use a week of usage in a day. A routine that never runs spends nothing; Test does, because it performs the work.</p></div></li>
+    </ol>
+    <div class="callout">
+      <span class="leadline">Copy and try</span>
+      <pre class="prompt">Set up a routine for me: every Sunday at 4:00 PM Eastern, draft next week's keto dinner plan from our usual rotation and my iPhone calendar, skip nights that already have plans, and update the existing Meal Plan Page in place. Reply in this chat with only the Page link and two lines on what changed. Do not email Giles, post to Discord, or buy anything. If the calendar can't be read, say so and stop; don't guess the week.</pre>
+    </div>
+  </section>
+
+  <section class="block" id="tip">
+    <h2>Tip of the week</h2>
+    <p class="prose">A new routine does not run the moment you save it. If you set “every day at 8 AM” at 8:05, the first run is tomorrow at 8. Open the routine and hit Test to try it now — and use a safe example, because a test does real work. Keep anything that messages Nicole, posts to Discord, or spends money behind your OK. If your weekly limit is running down faster than you expect, pause routines you don’t need, then widen schedules and narrow event triggers.</p>
+  </section>
+
+  <section class="block" id="spotlight">
+    <h2>Use case spotlight: an iPhone alarm that starts a briefing</h2>
+    <p class="prose">On November 5, Michael (@Michael_Fenech_) wrote that he made Grok Bot respond to a real-world event with his iPhone. When he stops his morning alarm, it starts preparing his daily briefing. He tested it that day and said it worked: no fixed schedule, no opening Grok Bot, and no typing a prompt. In follow-up replies he said it triggers when the alarm is fully stopped, not on snooze.</p>
+    <p class="prose">For your mornings, a scheduled routine is still the simple start: a short look at the iPhone calendar, in this chat. An event trigger is useful when the clock is the wrong cue. Official help also describes webhook triggers, which other people in that thread discussed. His post doesn’t spell out a Shortcuts recipe, so I won’t invent one here.</p>
+    <div class="link-grid">
+      <a class="link-card" href="https://x.com/Michael_Fenech_/status/2118383590446624846">
+        <strong>Alarm stop starts a daily briefing</strong>
+        <small>x.com/Michael_Fenech_ · Nov 5, 2026</small>
+      </a>
+    </div>
+  </section>
+
+  <section class="block" id="try">
+    <h2>Try this week</h2>
+    <p class="prose">Pick one recurring job you already do by hand and put it on a narrow schedule:</p>
+    <div class="callout">
+      <span class="leadline">A calendar glance, on a clock</span>
+      <pre class="prompt">Create a routine, owned by you: every Monday at 7:30 AM Eastern, read my iPhone calendar for the coming week and reply in this chat with a short "week at a glance." Do not add or change events. Do not message Zhaan, Nicole, or Giles unless I ask. If you can't read the calendar, say what blocked you and stop.</pre>
+    </div>
+    <p class="prose">Open the routine, confirm When to run, then hit Test once with that same safe ask.</p>
+  </section>
+
+  <section class="block" id="from-x">
+    <h2>From around X</h2>
+    <div class="stack">
+      <div class="rowcard"><strong>An iPhone event, not a clock</strong><p class="prose">@Michael_Fenech_ had Grok Bot start his daily briefing when he fully stopped his morning alarm, with no fixed schedule and no prompt to type.</p><small>Nov 5</small></div>
+      <div class="rowcard"><strong>Don’t run routines too often</strong><p class="prose">@SportsPolicyFan’s tips include treating a Bot like a new teammate with specific jobs, and avoiding routines that run too frequently, such as every 15 minutes.</p><small>Oct 23</small></div>
+      <div class="rowcard"><strong>Always-on can quietly break</strong><p class="prose">@twinedon0 notes that sites change, logins expire, and a broken routine can repeat for days before you notice, so each routine should still earn its place.</p><small>Oct 27</small></div>
+      <div class="rowcard"><strong>Long chats can make each run heavier</strong><p class="prose">@khkpublishing said their routines reread one long chat before every run, and they moved routines to a second Bot so each run could start from the saved instruction.</p><small>Nov 1</small></div>
+      <div class="rowcard"><strong>Webhooks need the expected format</strong><p class="prose">@CodeconutDev likes webhook routines, and also reports they expect a specific format — he had to add a custom relay for a ring that sends voice notes.</p><small>Oct 24</small></div>
+    </div>
+    <div class="link-grid follow">
+      <a class="link-card" href="https://x.com/Michael_Fenech_/status/2118383590446624846"><strong>Alarm-stop briefing</strong><small>x.com/Michael_Fenech_ · Nov 5</small></a>
+      <a class="link-card" href="https://x.com/SportsPolicyFan/status/2113762493566734610"><strong>Keep routine frequency in check</strong><small>x.com/SportsPolicyFan · Oct 23</small></a>
+      <a class="link-card" href="https://x.com/twinedon0/status/2115119988444975313"><strong>Review routines that may have broken</strong><small>x.com/twinedon0 · Oct 27</small></a>
+      <a class="link-card" href="https://x.com/khkpublishing/status/2116993604803494182"><strong>Don’t reread a long chat every run</strong><small>x.com/khkpublishing · Nov 1</small></a>
+      <a class="link-card" href="https://x.com/CodeconutDev/status/2113806389734977909"><strong>Webhook format catch</strong><small>x.com/CodeconutDev · Oct 24</small></a>
+    </div>
+  </section>
+
+  <section class="block" id="go-deeper">
+    <h2>Guides</h2>
+    <p class="prose">Official details on schedules, event triggers, Test, and usage live in the <a href="../guides/">Guides</a> list, and on the pages below.</p>
+    <ul class="bullets">
+      <li>Official skills and routines: <a href="https://docs.x.ai/grok-bot/skills-routines-and-automations">https://docs.x.ai/grok-bot/skills-routines-and-automations</a></li>
+      <li>Official routines help: <a href="https://cursor.com/help/grok-bot/routines">https://cursor.com/help/grok-bot/routines</a></li>
+    </ul>
+  </section>
 </article>
 </main>
 
